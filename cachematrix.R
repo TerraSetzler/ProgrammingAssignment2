@@ -19,9 +19,24 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
-## 
+## cachesolve takes input x
+## cache matrix looks to see if there is a value stored in the subset which is in the list as getinverse
+## Either a cached matrix, or NULL has been assigned to m
+## If it is NULL, the if function will not run and it will continue down
+## If it is not a null it will throw a message, return m, and skip the rest of the code
+## If it progressed, it will find the current stored value of x using get
+## Then 
+
 
 cacheSolve <- function(x, ...) {
-     
-   ## Return a matrix that is the inverse of 'x'
+  m <- x$getinverse()
+  if(!is.na(m)) {
+    message("getting cached matrix")
+    return(m)
+  }
+  data <- a$get()
+  
 }
+
+
+
