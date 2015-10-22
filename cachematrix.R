@@ -35,7 +35,12 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- a$get()
-  
+  m <- function(data) {
+    n <- nrow(data)
+    for(i in n) {
+      
+    }
+  }
 }
 
 
