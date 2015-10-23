@@ -9,9 +9,10 @@
 
 
 makeCacheMatrix <- function(x = matrix()) {
+  inv <- NA
   set <- function(y) {
     x <<- y
-    inv <<- NULL
+    inv <<- NA
   }
   get <- function() x
   setinverse <- function(inverse) inv <<- inverse
@@ -28,7 +29,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Then 
 
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x) {
   inv <- x$getinverse()
   if(!is.na(inv)) {
     message("getting cached matrix")
